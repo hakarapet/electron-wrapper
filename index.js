@@ -2,9 +2,9 @@
 
 //----------------------------------------------------------------------
 /**
- * Change this to development while development :)
+ * Uncomment this while on development stage.
  */
-process.env.NODE_ENV = 'production';
+// process.env.NODE_ENV = 'development';
 //----------------------------------------------------------------------
 
 const { app, BrowserWindow, dialog } = require('electron');
