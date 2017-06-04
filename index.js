@@ -1,10 +1,18 @@
 'use strict';
 
+//----------------------------------------------------------------------
+/**
+ * Change this to development while development :)
+ */
+process.env.NODE_ENV = 'production';
+//----------------------------------------------------------------------
+
 const { app, BrowserWindow, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const log = require('electron-log');
-const applicationProtocolName = 'electronwrapper';
-const mainWebAppUrl = 'https://cosmo-dev.traffics-switch.de/';
+const config = require('./config/config');
+const applicationProtocolName = config.get('applicationProtocolName');
+const mainWebAppUrl = config.get('mainWebAppUrl');
 
 let mainWindow;
 let forceAppQuit = false;

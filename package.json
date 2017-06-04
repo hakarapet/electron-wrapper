@@ -13,7 +13,12 @@
     "pack:win": "npm run clean:win; ./node_modules/.bin/electron-packager . \"electron-wrapper\" --out=../Builds/win --app-version=$npm_package_version --platform=win32 --arch=x64 --electronVersion=1.6.10 --ignore=\"node_modules/(electron-packager|electron-builder)\" --iconUrl=http://www.iconeasy.com/icon/ico/Movie%20%26%20TV/Turtles%20-%20Teenage%20Mutant%20Ninja/Donatelo.ico --icon=./img/electron-wrapper-icon.ico --overwrite=true --version-string.CompanyName='YourCompany'",
     "build:win": "npm run pack:win; CSC_LINK=\"\" CSC_KEY_PASSWORD=\"\"; build \"../Builds/win/electron-wrapper-win32-x64/\" --win --x64"
   },
-  "keywords": ["electron", "wrapper", "desktop application", "boilerplate"],
+  "keywords": [
+    "electron",
+    "wrapper",
+    "desktop application",
+    "boilerplate"
+  ],
   "devDependencies": {
     "electron": "^1.6.10",
     "electron-builder": "^18.3.0",
@@ -22,15 +27,17 @@
     "electron-squirrel-startup": "^1.0.0"
   },
   "dependencies": {
-    "nconf": "^0.8.4",
     "electron-log": "^2.2.6",
-    "electron-updater": "^1.16.0"
+    "electron-updater": "^1.16.0",
+    "nconf": "^0.8.4"
   },
   "build": {
-    "publish": [ {
-      "provider": "generic",
-      "url": "http://127.0.0.1:9090/"
-    } ],
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:9090/"
+      }
+    ],
     "appId": "com.yourcompany.electron-wrapper",
     "win": {
       "target": [
