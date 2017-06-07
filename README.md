@@ -18,9 +18,9 @@ To try out the application simply follow these steps:
 These steps are enough to have the application running on your machine. (Tested on MacOS and Linux actually).
 
 To create installable file for windows, you must run\
-`npm run build:win`
+`npm run build:win`\
 To create installable file for macos, you must run\
-`npm run build:mac`
+`npm run build:mac`\
 To create installable file for both operating systems at once, you must run\
 `npm run build:all`
 
