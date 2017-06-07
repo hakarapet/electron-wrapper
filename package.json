@@ -1,17 +1,21 @@
 {
   "name": "electron-wrapper",
-  "version": "0.0.1",
-  "description": "Electron wrapper for web api",
+  "version": "0.2.0",
+  "description": "Electron wrapper (boilerplate) for web api",
   "author": "Hayk Karapetyan",
-  "license": "MSI",
+  "license": "MIT",
   "productName": "electron-wrapper",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production ./node_modules/.bin/electron index.js",
     "clean:win": "rm -rf ../Builds/win",
+    "clean:mac": "rm -rf ../Builds/mac",
     "pack:win": "npm run clean:win; ./node_modules/.bin/electron-packager . \"electron-wrapper\" --out=../Builds/win --app-version=$npm_package_version --platform=win32 --arch=x64 --electronVersion=1.6.10 --ignore=\"node_modules/(electron-packager|electron-builder)\" --iconUrl=http://www.iconeasy.com/icon/ico/Movie%20%26%20TV/Turtles%20-%20Teenage%20Mutant%20Ninja/Donatelo.ico --icon=./img/electron-wrapper-icon.ico --overwrite=true --version-string.CompanyName='YourCompany'",
-    "build:win": "npm run pack:win; CSC_LINK=\"\" CSC_KEY_PASSWORD=\"\"; build \"../Builds/win/electron-wrapper-win32-x64/\" --win --x64"
+    "pack:mac": "npm run clean:mac; ./node_modules/.bin/electron-packager . \"electron-wrapper\" --out=../Builds/mac --app-version=$npm_package_version --platform=darwin --arch=x64 --electronVersion=1.6.10 --ignore=\"node_modules/(electron-packager|electron-builder)\" --icon=./img/electron-wrapper-icon.icns --overwrite=true --protocol-name=\"Your app protocol name\"",
+    "build:win": "npm run pack:win; CSC_LINK=\"\" CSC_KEY_PASSWORD=\"\"; build \"../Builds/win/electron-wrapper-win32-x64/\" --win --x64",
+    "build:mac": "npm run pack:mac; CSC_LINK=\"\" CSC_KEY_PASSWORD=\"\"; build \"../Builds/osx/electron-wrapper-darwin-x64/\" --mac --x64",
+    "build:all": "npm run build:win; npm run build:mac"
   },
   "keywords": [
     "electron",
@@ -58,6 +62,9 @@
         "zip",
         "dmg"
       ]
+    },
+    "dmg":{
+      "background": "./img/background.png"
     },
     "nsis": {
       "perMachine": true
