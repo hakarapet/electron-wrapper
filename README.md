@@ -17,8 +17,14 @@ To try out the application simply follow these steps:
 
 These steps are enough to have the application running on your machine. (Tested on MacOS and Linux actually).
 
-To create installable file, you must run\
+To create installable file for windows, you must run\
 `npm run build:win`
+To create installable file for macos, you must run\
+`npm run build:mac`
+To create installable file for both operating systems at once, you must run\
+`npm run build:all`
+
+_Notice: all builds are going to be 64 bit._
 
 The application has a functionality of detecting newer versions of itself and updating to them.\
 By default the build application is sending a GET request to a host, which is configured in __package.json__ file as\
@@ -33,4 +39,6 @@ application will notify with and dialogue box saying that there is a newer versi
 The application has two envionments:
 - *production* - this shows the google.com
 - *development* - this shows example.com
+
+According to the environment a differet url will be loaded.
 
