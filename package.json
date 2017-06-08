@@ -1,6 +1,6 @@
 {
   "name": "electron-wrapper",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Electron wrapper (boilerplate) for web api",
   "author": "Hayk Karapetyan",
   "license": "MIT",
