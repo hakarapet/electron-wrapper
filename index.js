@@ -17,6 +17,14 @@ const mainWebAppUrl = config.get('mainWebAppUrl');
 let mainWindow;
 let forceAppQuit = false;
 
+const isTestMode = function () {
+    let res = false;
+    process.argv.forEach((val) => {
+        if (val === 'TEST_MODE') res = true;
+    });
+    return res;
+};
+
 const applyExternalData = function (mainWindow, commandLine, currentUrl) {
     let data;
 
@@ -83,9 +91,10 @@ function createElectronWindow() {
     /**
      * Shows confirmation dialog.
      * Shows when the user attempts to close the application.
+     * Is disabled during testing.
      */
     mainWindow.on('close', (e) => {
-        if (!forceAppQuit) {
+        if (!forceAppQuit && !isTestMode()) {
             e.preventDefault();
             dialog.showMessageBox(
                 mainWindow, {
