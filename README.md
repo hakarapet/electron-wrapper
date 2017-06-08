@@ -42,3 +42,11 @@ The application has two envionments:
 
 According to the environment a differet url will be loaded.
 
+Testing is provided in __test__ folder.\
+To run tests run command:\
+`npm test`
+
+**Licence**
+
+_MIT_
+
