@@ -76,9 +76,9 @@ function createElectronWindow() {
 
     /**
      * Devtools of electron.
-     * Uncomment this only in case of development
+     * Open devtools only when the development env is set
      */
-    //mainWindow.webContents.openDevTools();
+    if (process.env.NODE_ENV === 'development') mainWindow.webContents.openDevTools();
 
     /**
      * Shows confirmation dialog.
